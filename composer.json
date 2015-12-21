@@ -1,5 +1,13 @@
 {
-    "name": "symfony/framework-standard-edition",
+    "name": "jordelca/my-twitter",
+    "authors": [
+        {
+            "name": "Jorge Delgado Carrasco",
+            "email": "jorge.delgado86@gmail.com",
+            "homepage": "https://github.com/jordelca",
+            "role": "Developer"
+        }
+    ],
     "license": "MIT",
     "type": "project",
     "description": "The \"Symfony Standard Edition\" distribution",
