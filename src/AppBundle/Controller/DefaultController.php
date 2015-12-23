@@ -13,9 +13,10 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-
-        $user = $this->getDoctrine()->getRepository("AppBundle:User")->findOneById(1);
-
+        $securityContext = $this->container->get('security.authorization_checker');
+        if ($securityContext->isGranted('ROLE_USER')) {
+            return $this->redirectToRoute('fos_user_profile_show', array(), 301);
+        }
         // replace this example code with whatever you need
         return $this->render('default/index.html.twig', array(
             'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..')
