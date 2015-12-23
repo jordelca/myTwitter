@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class DefaultController extends Controller
 {
@@ -15,11 +16,18 @@ class DefaultController extends Controller
     {
         $securityContext = $this->container->get('security.authorization_checker');
         if ($securityContext->isGranted('ROLE_USER')) {
-            return $this->redirectToRoute('fos_user_profile_show', array(), 301);
+            return new RedirectResponse($this->generateUrl('timeline'));
         }
+
+        return $this->render('default/index.html.twig');
+    }
+
+    /**
+     * @Route("/timeline", name="timeline")
+     */
+    public function timelineAction(Request $request)
+    {
         // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', array(
-            'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..')
-        ));
+        return $this->render('AppBundle:Timeline:showTimeline.html.twig');
     }
 }
