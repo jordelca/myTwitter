@@ -40,6 +40,18 @@
                             <li>
                                 <a href="#">Contact</a>
                             </li>
+                            {% if app.user %}
+                            <li>
+                                <a href="#">
+                                    {{ app.user.username }}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ path('fos_user_security_logout') }}">
+                                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                                </a>
+                            </li>
+                            {% endif %}
                         </ul>
                     </div>
                 {% endblock headerOptions %}
