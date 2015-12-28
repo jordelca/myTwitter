@@ -80,6 +80,11 @@ assetic:
             - %kernel.root_dir%/../vendor/fontawesome/fontawesome/fonts/fontawesome-webfont.woff
           output: fonts/fontawesome-webfont.woff
 
+        jquery:
+          inputs:
+            - %kernel.root_dir%/../vendor/components/jquery/jquery.js
+          output: js/jquery.js
+
         appBundle:
           inputs:
             - %kernel.root_dir%/../src/AppBundle/Resources/Public/css/login.css

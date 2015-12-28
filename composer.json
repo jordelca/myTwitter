@@ -28,6 +28,7 @@
         }
     ],
     "require": {
+        "components/jquery": "2.1.4",
         "fontawesome/fontawesome": "4.2.0",
 	    "twitter/bootstrap": "dev-master",
         "ext-mbstring": "*",
