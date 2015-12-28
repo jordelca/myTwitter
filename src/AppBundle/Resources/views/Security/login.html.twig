@@ -1,0 +1,72 @@
+{% extends "::base.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <div id="login-form">
+
+        <input type="radio" checked id="login" name="switch" class="hide">
+        <input type="radio" id="signup" name="switch" class="hide">
+
+        <div>
+            <ul class="form-header">
+                <li><label for="login"><i class="fa fa-lock"></i> LOGIN<label for="login"></li>
+                <li><label for="signup"><i class="fa fa-credit-card"></i> REGISTER</label></li>
+            </ul>
+        </div>
+
+        <div class="section-out">
+            <section class="login-section">
+                <div class="login">
+                    <form action="{{ path("fos_user_security_check") }}" method="post">
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                        <ul class="ul-list">
+                            <li><input type="text" id="username" name="_username" value="{{ last_username }}" required="required" class="input" placeholder="{{ 'security.login.username'|trans }}"/><span class="icon"><i class="fa fa-user"></i></span></li>
+                            <li><input type="password" id="password" name="_password" required="required" class="input" placeholder="{{ 'security.login.password'|trans }}" /><span class="icon"><i class="fa fa-lock"></i></span></li>
+                            <li><span class="remember"><input type="checkbox" id="remember_me" name="_remember_me" value="on" /> <label for="check1">{{ 'security.login.remember_me'|trans }}</label></span><span class="remember"><a href="">Forget Password</a></span></li>
+                            <li><input type="submit" value="{{ 'security.login.submit'|trans }}" class="btn"></li>
+                        </ul>
+                    </form>
+                </div>
+
+
+                <div class="social-login">Or sign in with &nbsp;
+                    <a href="" class="fb"><i class="fa fa-facebook"></i></a>
+                    <a href="" class="tw"><i class="fa fa-twitter"></i></a>
+                    <a href="" class="gp"><i class="fa fa-google-plus"></i></a>
+                    <a href="" class="in"><i class="fa fa-linkedin"></i></a>
+                </div>
+            </section>
+
+            <section class="signup-section">
+                <div class="login">
+                    <form action="">
+                        <ul class="ul-list">
+                            <li><input type="email" required class="input" placeholder="Your Email"/><span class="icon"><i class="fa fa-user"></i></span></li>
+                            <li><input type="password" required class="input" placeholder="Password"/><span class="icon"><i class="fa fa-lock"></i></span></li>
+                            <li><input type="checkbox" id="check1"> <label for="check1">I accept terms and conditions</label></li>
+                            <li><input type="submit" value="SIGN UP" class="btn"></li>
+                        </ul>
+                    </form>
+                </div>
+
+                <div class="social-login">Or sign up with &nbsp;
+                    <a href="" class="fb"><i class="fa fa-facebook"></i></a>
+                    <a href="" class="tw"><i class="fa fa-twitter"></i></a>
+                    <a href="" class="gp"><i class="fa fa-google-plus"></i></a>
+                    <a href="" class="in"><i class="fa fa-linkedin"></i></a>
+                </div>
+            </section>
+        </div>
+
+    </div>
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+{% endblock content %}

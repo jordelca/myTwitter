@@ -12,3 +12,5 @@ parameters:
     mailer_password: null
     locale: en
     secret: ThisTokenIsNotSoSecretChangeIt
+
+    contact_email: jorge.delgado86@gmail.com

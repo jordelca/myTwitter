@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5efe67d97bc2ebf67a756b04f816d0bc",
-    "content-hash": "05ff551b09a1ea04655f44c9a85079be",
+    "hash": "513db3d88039acf0317ac1eababbd6c0",
+    "content-hash": "7e6f9a503338fc4aa4400ecb7494ae75",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -705,6 +705,17 @@
                 "orm"
             ],
             "time": "2015-08-31 13:19:01"
+        },
+        {
+            "name": "fontawesome/fontawesome",
+            "version": "4.2.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/FortAwesome/Font-Awesome/archive/v4.2.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "library"
         },
         {
             "name": "friendsofsymfony/user-bundle",
@@ -1695,6 +1706,57 @@
                 "templating"
             ],
             "time": "2015-11-05 12:49:06"
+        },
+        {
+            "name": "twitter/bootstrap",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twbs/bootstrap.git",
+                "reference": "40996725ce9e3c9244ae2ca3dd4e25f4558c8ff8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/40996725ce9e3c9244ae2ca3dd4e25f4558c8ff8",
+                "reference": "40996725ce9e3c9244ae2ca3dd4e25f4558c8ff8",
+                "shasum": ""
+            },
+            "replace": {
+                "twitter/bootstrap": "self.version"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jacob Thornton",
+                    "email": "jacobthornton@gmail.com"
+                },
+                {
+                    "name": "Mark Otto",
+                    "email": "markdotto@gmail.com"
+                }
+            ],
+            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+            "homepage": "http://getbootstrap.com",
+            "keywords": [
+                "JS",
+                "css",
+                "framework",
+                "front-end",
+                "less",
+                "mobile-first",
+                "responsive",
+                "web"
+            ],
+            "time": "2015-12-23 00:11:18"
         }
     ],
     "packages-dev": [
@@ -1750,6 +1812,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "twitter/bootstrap": 20,
         "friendsofsymfony/user-bundle": 20
     },
     "prefer-stable": false,
