@@ -42,6 +42,7 @@ twig:
 
 # Assetic Configuration
 assetic:
+    bundles: [ AppBundle ]
     assets:
         bootstrap_css:
             inputs:
@@ -85,10 +86,15 @@ assetic:
             - %kernel.root_dir%/../vendor/components/jquery/jquery.js
           output: js/jquery.js
 
-        appBundle:
+        login:
           inputs:
             - %kernel.root_dir%/../src/AppBundle/Resources/Public/css/login.css
           output: css/login.css
+
+        landingpage:
+          inputs:
+            - %kernel.root_dir%/../src/AppBundle/Resources/Public/css/landingpage.css
+          output: css/landingpage.css
 
     debug:          "%kernel.debug%"
     use_controller: false

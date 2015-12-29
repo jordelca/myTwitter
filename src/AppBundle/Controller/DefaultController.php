@@ -10,6 +10,22 @@ use FOS\UserBundle\Controller\SecurityController as BaseController;
 class DefaultController extends BaseController
 {
     /**
+     * @Route("/", name="landingpage")
+     */
+    public function landingPageAction(Request $request){
+        {
+
+            $securityContext = $this->container->get('security.authorization_checker');
+            if ($securityContext->isGranted('ROLE_USER')) {
+                return new RedirectResponse($this->generateUrl('timeline'));
+            }
+            
+            // replace this example code with whatever you need
+            return $this->render('AppBundle:LandingPage:showLandingPage.html.twig');
+        }
+    }
+
+    /**
      * @Route("/login", name="login")
      */
     public function loginAction(Request $request){

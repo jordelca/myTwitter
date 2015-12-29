@@ -1,0 +1,25 @@
+{% extends "::base.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/landingpage.css') }}">
+{% endblock %}
+{% block content %}
+    <div class="content">
+        {% image '@AppBundle/Resources/Public/images/pict0.jpg' %}
+        <div class="parallax-window header" data-parallax="scroll" data-image-src="{{ asset_url }}">
+        </div>
+        {% endimage %}
+        {% image '@AppBundle/Resources/Public/images/pict1.jpg' %}
+            <div class="parallax-window" data-parallax="scroll" data-image-src="{{ asset_url }}">
+                <div class="parallax-block "><div class="container"> Test </div></div>
+            </div>
+        {% endimage %}
+        {% image '@AppBundle/Resources/Public/images/pict2.jpg' %}
+            <div class="parallax-window" data-parallax="scroll" data-image-src="{{ asset_url }}">
+                <div class="parallax-block"><div class="container"> Test </div></div>
+            </div>
+        {% endimage %}
+    </div>
+
+{% endblock %}
