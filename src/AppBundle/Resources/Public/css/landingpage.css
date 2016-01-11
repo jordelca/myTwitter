@@ -1,6 +1,10 @@
 div.parallax-block{
     background-color: white; min-height: 150px;
-    bottom:0;
+
+    background-color: #222;
+    border-color: #080808;
+    color: #9d9d9d;
+    margin-top: -30px;
 }
 
 .parallax-window {

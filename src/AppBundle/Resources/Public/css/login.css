@@ -1,38 +1,19 @@
-/* Sticky footer styles
--------------------------------------------------- */
+
 html {
-    position: relative;
-    min-height: 100%;
+    height: 100%;
 }
 body {
-    /* Margin bottom by footer height */
-    margin-bottom: 60px;
-}
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    height: 60px;
-    background-color: #222;
-}
 
+    background-image: url("../bundles/app/images/pict3.jpg");
+    background-size: cover;
+}
 
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
 
-.container {
-    width: auto;
-    max-width: 680px;
-    padding: 0 15px;
-}
-.container .text-muted {
-    margin: 20px 0;
-    text-align: center;
-}
 
-body{font-family: 'Ropa Sans', sans-serif; color:#666; font-size:14px; color:#333}
+body{font-family: 'Ropa Sans', sans-serif; color:#666; font-size:14px; color:#333;background-color: transparent;}
 li,ul,body,input{margin:0; padding:0; list-style:none}
 #login-form{width:350px; background:#FFF; margin:0 auto; margin-top:70px; background:#f8f8f8; overflow:hidden; border-radius:7px}
 .form-header{display:table; clear:both}
