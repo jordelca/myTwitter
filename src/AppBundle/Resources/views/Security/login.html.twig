@@ -4,7 +4,13 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+
+    {% stylesheets 'bundles/app/css/login.css' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+
+
 {% endblock %}
 
 {% block content %}
