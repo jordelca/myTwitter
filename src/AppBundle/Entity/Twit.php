@@ -29,8 +29,8 @@ class Twit
      * @Assert\Length(
      *      min = 10,
      *      max = 150,
-     *      minMessage = "Your first name must be at least {{ limit }} characters long",
-     *      maxMessage = "Your first name cannot be longer than {{ limit }} characters"
+     *      minMessage = "Twits must be at least {{ limit }} characters long",
+     *      maxMessage = "Twits cannot be longer than {{ limit }} characters"
      * )
      *
      * @ORM\Column(name="message", type="string", length=150)
