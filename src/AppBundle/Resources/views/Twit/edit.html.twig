@@ -3,11 +3,13 @@
 {% block inner_content %}
     <h1>Twit edit</h1>
 
-    <blockquote class="twitter-tweet">
+    <blockquote class="twitter-tweet col-xs-12">
         {{ app.user }} (@{{ app.user }})
         {{ form_start(edit_form) }}
-
-        {{ form_widget(edit_form) }}
+        <div class="col-xs-9 pull-left">
+            {{ form_widget(edit_form.message, {'attr': {'class': 'pull-left form-control'}}) }}
+        </div>
+        {{ form_row(edit_form.submit, {'attr': {'class': 'btn btn-primary pull-right col-xs-2'}}) }}
 
         {{ form_end(edit_form) }}
 

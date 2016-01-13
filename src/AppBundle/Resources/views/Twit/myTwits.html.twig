@@ -1,0 +1,17 @@
+{% extends '::layout.html.twig' %}
+
+{% block inner_content %}
+    <h1>My twits</h1>
+
+
+    {% for entity in entities %}
+        {% include 'AppBundle:Twit/Includes:twit.html.twig' with {'twit' : entity} %}
+    {% endfor %}
+
+
+
+    <a href="{{ path('twit_new') }}" class="btn btn-primary">
+        Create a new entry
+    </a>
+
+{% endblock %}

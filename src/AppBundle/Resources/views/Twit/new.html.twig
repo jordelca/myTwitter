@@ -5,13 +5,17 @@
 
     <h1>Twit creation</h1>
 
-    <blockquote class="twitter-tweet">
+    <blockquote class="twitter-tweet col-xs-12">
         {{ app.user }} (@{{ app.user }})
         {{ form_start(form) }}
-
-        {{ form_widget(form) }}
+        <div class="col-xs-9 pull-left">
+            {{ form_widget(form.message, {'attr': {'class': 'pull-left form-control'}}) }}
+        </div>
+        {{ form_row(form.submit, {'attr': {'class': 'btn btn-primary pull-right col-xs-2'}}) }}
 
         {{ form_end(form) }}
+
+
 
     </blockquote>
 

@@ -34,6 +34,25 @@ class TwitController extends Controller
             'entities' => $entities,
         );
     }
+
+    /**
+     * Lists my Twit entities.
+     *
+     * @Route("/myTwits", name="my_twits")
+     * @Method("GET")
+     * @Template()
+     */
+    public function myTwitsAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $entities = $this->get('app.twits')->findMyTwits();
+
+
+        return array(
+            'entities' => $entities,
+        );
+    }
+
     /**
      * Creates a new Twit entity.
      *
