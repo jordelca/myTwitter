@@ -1,4 +1,6 @@
-{% extends "::base.html.twig" %}
-{% block content %}
-
+{% extends "::layout.html.twig" %}
+{% block inner_content %}
+                <a href="{{ path('twit_new') }}" class="btn btn-primary">
+                Create a new entry
+            </a>
 {% endblock %}

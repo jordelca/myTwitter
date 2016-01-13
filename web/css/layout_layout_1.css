@@ -2,3 +2,7 @@ body {
     background-image: url("../../../bundles/app/images/pict3.jpg");
     background-size: cover;
 }
+
+.content_background{
+    height: 100%;
+}
