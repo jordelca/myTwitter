@@ -17,7 +17,7 @@ class DefaultController extends BaseController
 
             $securityContext = $this->container->get('security.authorization_checker');
             if ($securityContext->isGranted('ROLE_USER')) {
-                return new RedirectResponse($this->generateUrl('timeline'));
+                return new RedirectResponse($this->generateUrl('twit'));
             }
             
             // replace this example code with whatever you need
