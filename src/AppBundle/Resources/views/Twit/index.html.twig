@@ -1,0 +1,19 @@
+{% extends '::layout.html.twig' %}
+
+{% block inner_content %}
+    <h1>Twit list</h1>
+
+
+    {% for entity in entities %}
+        {% include 'AppBundle:Twit/Includes:twit.html.twig' with {'twit' : entity} %}
+    {% endfor %}
+
+
+    <ul>
+        <li>
+            <a href="{{ path('twit_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+{% endblock %}

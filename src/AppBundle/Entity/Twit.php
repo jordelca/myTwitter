@@ -2,7 +2,9 @@
 
 namespace AppBundle\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
+use UserBundle\Entity\User;
 
 /**
  * Twit
@@ -23,37 +25,41 @@ class Twit
 
     /**
      * @var string
+     * @Assert\NotBlank()
+     * @Assert\Length(
+     *      min = 10,
+     *      max = 150,
+     *      minMessage = "Your first name must be at least {{ limit }} characters long",
+     *      maxMessage = "Your first name cannot be longer than {{ limit }} characters"
+     * )
      *
      * @ORM\Column(name="message", type="string", length=150)
      */
     private $message;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="src_usr_id", type="integer")
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="twits")
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * @var User
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
+     * @ORM\JoinColumn(name="src_usr_id", referencedColumnName="id")
      */
     private $srcUsrId;
 
     /**
      * @var \DateTime
-     *
      * @ORM\Column(name="creation_time", type="datetime")
      */
     private $creationTime;
 
     /**
      * @var integer
-     *
+     * @Assert\NotBlank()
      * @ORM\Column(name="likes", type="integer")
      */
     private $likes = 0;
 
     /**
      * @var integer
-     *
+     * @Assert\NotBlank()
      * @ORM\Column(name="retwits", type="integer")
      */
     private $retwits = 0;
@@ -95,10 +101,10 @@ class Twit
     /**
      * Set srcUsrId
      *
-     * @param integer $srcUsrId
+     * @param User $srcUsrId
      * @return Twit
      */
-    public function setSrcUsrId($srcUsrId)
+    public function setSrcUsrId(User $srcUsrId)
     {
         $this->srcUsrId = $srcUsrId;
 
@@ -108,7 +114,7 @@ class Twit
     /**
      * Get srcUsrId
      *
-     * @return integer 
+     * @return User
      */
     public function getSrcUsrId()
     {

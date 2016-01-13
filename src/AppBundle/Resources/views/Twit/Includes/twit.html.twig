@@ -1,0 +1,9 @@
+<a href="{{ path('twit_show', { 'id': entity.id }) }}">
+    <blockquote class="twitter-tweet">
+        <p> {{ entity.message }} </p>
+        {{ entity.srcUsrId.username }} (@{{ entity.srcUsrId.username }})
+        {{ entity.creationTime | date('h:m d/m/Y')}}
+        {{ entity.likes }} likes
+        {{ entity.retwits }} retwits
+    </blockquote>
+</a>

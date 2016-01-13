@@ -62,7 +62,7 @@ class Retwit
     /**
      * Get srcUsrId
      *
-     * @return integer 
+     * @return integer
      */
     public function getSrcUsrId()
     {

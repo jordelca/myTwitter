@@ -30,6 +30,7 @@ framework:
     session:
         # handler_id set to null will use default session handler from php.ini
         handler_id:  ~
+        gc_probability: 0
     fragments:       ~
     http_method_override: true
 
@@ -103,6 +104,20 @@ assetic:
           filters:
             - cssrewrite
           output: css/main.css
+
+        layout:
+          inputs:
+            - %kernel.root_dir%/../app/Resources/css/layout.css
+          filters:
+            - cssrewrite
+          output: css/layout.css
+
+        twit:
+          inputs:
+            - %kernel.root_dir%/../src/AppBundle/Resources/public/css/twit.css
+          filters:
+            - cssrewrite
+          output: css/twit.css
 
         login:
           inputs:

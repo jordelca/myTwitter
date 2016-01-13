@@ -24,4 +24,9 @@ class User extends BaseUser
         parent::__construct();
         // your own logic
     }
+
+    public function __toString()
+    {
+        return (string) $this->getUsername();
+    }
 }
