@@ -220,7 +220,7 @@ class TwitController extends Controller
                 throw $this->createNotFoundException('Unable to find Twit entity.');
             }
 
-            if ($entity.srcUsrId !== $this->get('security.context')->getToken()->getUser() ) {
+            if ($entity->getSrcUsrId() !== $this->get('security.context')->getToken()->getUser() ) {
                 throw $this->createNotFoundException('You are not allowed to delete someone else twits.');
             }
             $em->remove($entity);

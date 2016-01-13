@@ -3,9 +3,11 @@
     {{ entity.creationTime|date('H:m d/m/Y') }}
 
     <div class="pull-right">
-        <a href="{{ path('twit_edit', { 'id': entity.id }) }}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
         <a href="{{ path('twit_show', { 'id': entity.id }) }}" class="btn btn-primary"><i class="fa fa-eye"></i></a>
-        <a href="{{ path('twit_delete', { 'id': entity.id }) }}" class="btn btn-primary"><i class="fa fa-remove"></i></a>
+        {% if app.user == entity.srcUsrId %}
+            <a href="{{ path('twit_edit', { 'id': entity.id }) }}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+            <a href="{{ path('twit_delete', { 'id': entity.id }) }}" class="btn btn-primary"><i class="fa fa-remove"></i></a>
+        {% endif %}
     </div>
 
     <p>{{ entity.message }}</p>
