@@ -207,7 +207,7 @@ class TwitController extends Controller
     /**
      * Deletes a Twit entity.
      *
-     * @Route("/{id}", name="twit_delete")
+     * @Route("/{id}/delete", name="twit_delete")
      * @Method("GET")
      */
     public function deleteAction($id)
