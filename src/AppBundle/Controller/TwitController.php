@@ -208,14 +208,11 @@ class TwitController extends Controller
      * Deletes a Twit entity.
      *
      * @Route("/{id}", name="twit_delete")
-     * @Method("DELETE")
+     * @Method("GET")
      */
-    public function deleteAction(Request $request, $id)
+    public function deleteAction($id)
     {
-        $form = $this->createDeleteForm($id);
-        $form->handleRequest($request);
 
-        if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $entity = $em->getRepository('AppBundle:Twit')->find($id);
 
@@ -225,7 +222,7 @@ class TwitController extends Controller
 
             $em->remove($entity);
             $em->flush();
-        }
+
 
         return $this->redirect($this->generateUrl('twit'));
     }
