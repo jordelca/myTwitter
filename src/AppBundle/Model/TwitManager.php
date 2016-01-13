@@ -16,8 +16,8 @@ class TwitManager {
         $this->context = $context;
     }
 
-    public function findMyTwits()
+    public function findTwitsByUser($user)
     {
-        return $this->repository->findBy(array("srcUsrId" => $this->context->getToken()->getUser() ));
+        return $this->repository->findBy(array("srcUsrId" => $user ));
     }
 }
