@@ -1,15 +1,24 @@
 {% extends '::layout.html.twig' %}
 
 {% block inner_content %}
+
+
     <h1>Twit creation</h1>
 
-    {{ form(form) }}
+    <blockquote class="twitter-tweet">
+        {{ app.user }} (@{{ app.user }})
+        {{ form_start(form) }}
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('twit') }}" class="btn btn-primary">
-            Back to the list
-        </a>
-    </li>
-</ul>
+        {{ form_widget(form) }}
+
+        {{ form_end(form) }}
+
+    </blockquote>
+
+
+
+
+    <a href="{{ path('twit') }}" class="btn btn-primary">
+        Back to the list
+    </a>
 {% endblock %}
