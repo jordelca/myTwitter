@@ -13,6 +13,7 @@ web_profiler:
     intercept_redirects: false
 
 monolog:
+    channels: ['request_info']
     handlers:
         main:
             type:   stream
@@ -33,6 +34,12 @@ monolog:
                 VERBOSITY_VERY_VERBOSE: NOTICE
                 VERBOSITY_DEBUG: DEBUG
             channels: ["doctrine"]
+        log:
+            type:  stream
+            path:  "%kernel.logs_dir%/log-%kernel.environment%.log"
+            level: debug
+            channels: ['request_info']
+
         # uncomment to get logging in your browser
         # you may have to allow bigger header sizes in your Web server configuration
         #firephp:

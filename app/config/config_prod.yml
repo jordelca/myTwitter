@@ -38,3 +38,10 @@ monolog:
             level: debug
         console:
             type:  console
+        log:
+            type:  stream
+            path:  "%kernel.logs_dir%/log-%kernel.environment%.log"
+            level: debug
+            formatter: monolog.formatter.log_listener
+            channels: ['request_info']
+

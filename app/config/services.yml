@@ -11,3 +11,18 @@ services:
       app.twits:
         class: AppBundle\Model\TwitManager
         arguments: ['@doctrine.orm.default_entity_manager', '@security.context']
+
+
+      monolog.formatter.log_listener:
+              class: Monolog\Formatter\LineFormatter
+              arguments:
+                  - "[%%datetime%%] %%channel%%.%%level_name%%: %%message%%\n"
+
+
+      app.log_listener:
+              class: AppBundle\EventListener\LogListener
+              arguments: ['@logger']
+              tags:
+                  - { name: monolog.logger, channel: request_info }
+                  - { name: kernel.event_listener, event: kernel.request}
+
