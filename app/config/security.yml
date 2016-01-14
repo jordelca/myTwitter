@@ -1,7 +1,8 @@
 # app/config/security.yml
 security:
     encoders:
-        FOS\UserBundle\Model\UserInterface: bcrypt
+        FOS\UserBundle\Model\UserInterface: sha512
+        Symfony\Component\Security\Core\User\User: plaintext
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
@@ -10,8 +11,19 @@ security:
     providers:
         fos_userbundle:
             id: fos_user.user_provider.username
+        in_memory:
+            memory:
+                users:
+                    admin:
+                        password: adminpass
+                        roles: 'ROLE_ADMIN'
 
     firewalls:
+        admin:
+            pattern:    ^/admin/.*
+            http_basic:
+                provider: in_memory
+
         main:
             pattern: ^/
             form_login:
@@ -21,6 +33,9 @@ security:
 
             logout:       true
             anonymous:    true
+
+
+
 
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
