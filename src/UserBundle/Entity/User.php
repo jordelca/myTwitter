@@ -5,6 +5,8 @@ namespace UserBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity
@@ -18,6 +20,22 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
+    /**
+     * @Assert\NotBlank()
+     * @Assert\True()
+     */
+    protected $termsAccepted;
+
+    public function getTermsAccepted()
+    {
+        return $this->termsAccepted;
+    }
+
+    public function setTermsAccepted($termsAccepted)
+    {
+        $this->termsAccepted = (bool) $termsAccepted;
+    }
 
     public function __construct()
     {

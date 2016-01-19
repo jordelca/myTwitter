@@ -14,15 +14,33 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
  */
 class AdminController extends Controller
 {
+
     /**
-     * Lists all Twit entities.
-     *
-     * @Route("/", name="admin")
+     * @Route("/", name="manager")
      * @Method("GET")
      * @Template()
      */
-    public function indexAction()
+    public function managerAction()
     {
-        return array();
+        $userManager = $this->container->get('fos_user.user_manager');
+        $userList = $userManager->findUsers();
+
+
+        return $this->render('AppBundle:Admin:manager.html.twig', array('users' => $userList));
     }
+
+    /**
+     * @Route("/manageuser/{id}", name="manageuser")
+     * @Method("GET")
+     * @Template()
+     */
+    public function manageUserAction($id)
+    {
+        $userManager = $this->container->get('fos_user.user_manager');
+        $user = $userManager->findUserBy(array('id'=>$id));
+
+
+        return $this->render('AppBundle:Admin:manageUser.html.twig', array('user' => $user));
+    }
+
 }

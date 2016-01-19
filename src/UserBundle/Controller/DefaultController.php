@@ -12,9 +12,7 @@ class DefaultController extends Controller
     /**
      * @Route("/signup", name="signup")
      */
-    public function createUserAction(
-
-    )
+    public function createUserAction()
     {
         $user = new User();
         $form = $this->createFormBuilder()
@@ -35,4 +33,6 @@ class DefaultController extends Controller
         }
         return $this->render('UserBundle:Default:createUser.html.twig');
     }
+
+
 }

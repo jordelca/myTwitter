@@ -1,0 +1,21 @@
+{% extends "::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block inner_content %}
+    <h1>User created</h1>
+
+    <blockquote class="twitter-tweet col-xs-12">
+            <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+            {% if targetUrl %}
+                <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
+            {% endif %}
+    </blockquote>
+
+
+    <a href="{{ path('twit') }}" class="btn btn-primary">
+        Back to the list
+    </a>
+
+</ul>
+{% endblock %}

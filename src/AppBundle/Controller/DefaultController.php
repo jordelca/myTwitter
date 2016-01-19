@@ -3,12 +3,12 @@
 namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bridge\Doctrine\Tests\Fixtures\User;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use FOS\UserBundle\Controller\SecurityController as BaseController;
 use AppBundle\Form\RegistrationType;
-use AppBundle\Model\Registration;
 
 class DefaultController extends BaseController
 {
@@ -47,9 +47,10 @@ class DefaultController extends BaseController
      */
     public function registerAction(Request $request){
 
+
         $em = $this->getDoctrine()->getManager();
 
-        $form = $this->createForm(new RegistrationType(), new Registration());
+        $form = $this->createForm($this->get('app.form.registration'), new \UserBundle\Entity\User());
 
         $form->handleRequest($request);
 
@@ -57,8 +58,13 @@ class DefaultController extends BaseController
         if ($form->isValid()) {
             $registration = $form->getData();
 
-            $em->persist($registration->getUser());
+            $em->persist($registration);
             $em->flush();
+
+            $this->addFlash(
+                'notice',
+                'Your changes were saved!'
+            );
 
             return $this->redirectToRoute('login');
         }

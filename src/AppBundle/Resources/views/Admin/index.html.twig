@@ -1,36 +1,42 @@
-{% extends '::layout.html.twig' %}
+{% extends "::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
 
 {% block headerOptions %}
-   <!-- Collect the nav links, forms, and other content for toggling -->
-   <div class=" collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-       <ul class="pull-left nav navbar-nav">
-           <li>
-               <a href="#">About</a>
-           </li>
-           <li>
-               <a href="#">Services</a>
-           </li>
-           <li>
-               <a href="#">Contact</a>
-           </li>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class=" collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="pull-left nav navbar-nav">
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Services</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
 
-       </ul>
-       <ul class="pull-right nav navbar-nav">
-           {% if app.user %}
-               <li>
-                   <a href="#">
-                       {{ app.user.username }}
-                   </a>
-               </li>
-           {% endif %}
-       </ul>
+        </ul>
+        <ul class="pull-right nav navbar-nav">
+            {% if app.user %}
+                <li>
+                    <a href="#">
+                        {{ app.user.username }}
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
 
-   </div>
+    </div>
 
 {% endblock headerOptions %}
 
 {% block inner_content %}
-    <h1>Admin view</h1>
+    <h1>User Manager</h1>
 
+    <blockquote class="twitter-tweet col-xs-12">
 
+    </blockquote>
+
+</ul>
 {% endblock %}

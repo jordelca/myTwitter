@@ -9,6 +9,11 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: UserBundle\Entity\User
+    registration:
+        confirmation:
+            enabled:    false
+        form:
+            type: app_user_registration
 
 framework:
     #esi:             ~
