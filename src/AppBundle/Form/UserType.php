@@ -5,7 +5,7 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use FOS\UserBundle\Util\LegacyFormHelper;
+
 
 
 
@@ -23,8 +23,8 @@ class UserType extends AbstractType
             ->add('plainPassword','repeated', array(
                 'type' => 'password',
                 'options' => array('translation_domain' => 'FOSUserBundle'),
-                'first_options' => array('label' => 'form.password'),
-                'second_options' => array('label' => 'form.password_confirmation'),
+                'first_name' => 'password',
+                'second_name' => 'confirm',
                 'invalid_message' => 'fos_user.password.mismatch',
             ))
         ;
