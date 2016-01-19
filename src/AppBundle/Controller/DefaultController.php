@@ -5,7 +5,10 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use FOS\UserBundle\Controller\SecurityController as BaseController;
+use AppBundle\Form\RegistrationType;
+use AppBundle\Model\Registration;
 
 class DefaultController extends BaseController
 {
@@ -36,6 +39,34 @@ class DefaultController extends BaseController
 
         $response = BaseController::loginAction($request);
         return $response;
+    }
+
+    /**
+     * @Route("/register", name="register")
+     * @Template("AppBundle:Default:register.html.twig")
+     */
+    public function registerAction(Request $request){
+
+        $em = $this->getDoctrine()->getManager();
+
+        $form = $this->createForm(new RegistrationType(), new Registration());
+
+        $form->handleRequest($request);
+
+
+        if ($form->isValid()) {
+            $registration = $form->getData();
+
+            $em->persist($registration->getUser());
+            $em->flush();
+
+            return $this->redirectToRoute('login');
+        }
+
+        return $this->render(
+            'AppBundle:Security:register.html.twig',
+            array('form' => $form->createView())
+        );
     }
 
     /**
