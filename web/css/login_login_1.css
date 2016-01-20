@@ -15,7 +15,7 @@ body {
 
 body{font-family: 'Ropa Sans', sans-serif; color:#666; font-size:14px; color:#333;background-color: transparent;}
 li,ul,body,input{margin:0; padding:0; list-style:none}
-#login-form{width:350px; background:#FFF; margin:0 auto; margin-top:70px; background:#f8f8f8; overflow:hidden; border-radius:7px}
+#login-form, #register-form{width:350px; background:#FFF; margin:0 auto; margin-top:70px; background:#f8f8f8; overflow:hidden; border-radius:7px}
 .form-header{display:table; clear:both}
 .form-footer{clear:both}
 .form-header label{display:block; cursor:pointer; z-index:999}
@@ -48,9 +48,9 @@ li,ul,body,input{margin:0; padding:0; list-style:none}
 .remember:nth-child(2){text-align:right}
 .remember a{text-decoration:none; color:#666}
 
-.hide{display:none}
 
-/*swich form*/
-#signup:checked~.section-out{margin-left:-350px}
-#login:checked~.section-out{margin-left:0px}
-#login:checked~div .form-header li:nth-child(1),#signup:checked~div .form-header li:nth-child(2){background:#e8e8e8}
+#login-form .form-header li.checked,#register-form .form-header li.checked{background:#e8e8e8;}
+.form-header a{
+    color:inherit;
+}
+

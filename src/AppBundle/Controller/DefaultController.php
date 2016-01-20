@@ -42,40 +42,6 @@ class DefaultController extends BaseController
     }
 
     /**
-     * @Route("/register", name="register")
-     * @Template("AppBundle:Default:register.html.twig")
-     */
-    public function registerAction(Request $request){
-
-
-        $em = $this->getDoctrine()->getManager();
-
-        $form = $this->createForm($this->get('app.form.registration'), new \UserBundle\Entity\User());
-
-        $form->handleRequest($request);
-
-
-        if ($form->isValid()) {
-            $registration = $form->getData();
-
-            $em->persist($registration);
-            $em->flush();
-
-            $this->addFlash(
-                'notice',
-                'Your changes were saved!'
-            );
-
-            return $this->redirectToRoute('login');
-        }
-
-        return $this->render(
-            'AppBundle:Security:register.html.twig',
-            array('form' => $form->createView())
-        );
-    }
-
-    /**
      * @Route("/", name="homepage")
      */
     public function indexAction(Request $request)

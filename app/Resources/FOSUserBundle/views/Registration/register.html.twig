@@ -1,20 +1,69 @@
-<section class="signup-section">
-    <div class="login">
+{% extends "::base.html.twig" %}
 
-        {{ form_start(form, {'action': path('fos_user_registration_register'), 'method': 'POST'}) }}
-        {{ form_errors(form) }}
-        <ul class="ul-list">
-            <li>{{ form_widget(form.username,{'attr':{'class':'input', 'placeholder':'Username'}}) }}<span class="icon"><i class="fa fa-user"></i></span></li>
-            <li>{{ form_widget(form.email,{'attr':{'class':'input', 'placeholder':'Email'}}) }}<span class="icon"><i class="fa fa-envelope"></i></span></li>
-            <li>{{ form_widget(form.plainPassword.password,{'attr':{'class':'input', 'placeholder':'Password'}}) }}<span class="icon"><i class="fa fa-lock"></i></span></li>
-            <li>{{ form_widget(form.plainPassword.confirm,{'attr':{'class':'input', 'placeholder':'Repeat password'}}) }}<span class="icon"><i class="fa fa-lock"></i></span></li>
-            <li>{{ form_widget(form.terms) }}{{ form_label(form.terms) }}</li>
-            <li>{{ form_widget(form.register, {'attr':{'class':'btn'}}) }} </li>
-        </ul>
+{% trans_default_domain 'FOSUserBundle' %}
 
-        {{ form_rest(form) }}
-        {{ form_end(form) }}
+{% block stylesheets %}
+    {{ parent() }}
+
+    {% stylesheets 'bundles/app/css/login.css' filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+
+
+{% endblock %}
+
+{% block content %}
+
+    <div id="register-form" class="background-cover">
+
+
+        <div>
+            <ul class="form-header">
+                <a href="{{ path('login') }}"><li><label for="login"><i class="fa fa-lock"></i> LOGIN</label></li></a>
+                <li class="checked"><label for="signup"><i class="fa fa-credit-card"></i> REGISTER</label></li>
+            </ul>
+        </div>
+
+        <div class="section-out">
+            <section class="signup-section">
+                <div class="login">
+
+                    {{ form_start(form, {'action': path('fos_user_registration_register'), 'method': 'POST'}) }}
+                    <div class="panel panel-danger">
+                        <div class="panel-body">
+                            <div>{{ form_errors(form) }}</div>
+                        </div>
+                    </div>
+
+                    <ul class="ul-list">
+                        <li>{{ form_widget(form.username,{'attr':{'class':'input', 'placeholder':'Username'}}) }}<span class="icon"><i class="fa fa-user"></i></span></li>
+                        <li>{{ form_widget(form.email,{'attr':{'class':'input', 'placeholder':'Email'}}) }}<span class="icon"><i class="fa fa-envelope"></i></span></li>
+                        <li>{{ form_widget(form.plainPassword.password,{'attr':{'class':'input', 'placeholder':'Password'}}) }}<span class="icon"><i class="fa fa-lock"></i></span></li>
+                        <li>{{ form_widget(form.plainPassword.confirm,{'attr':{'class':'input', 'placeholder':'Repeat password'}}) }}<span class="icon"><i class="fa fa-lock"></i></span></li>
+                        <li>{{ form_widget(form.terms) }}{{ form_label(form.terms) }}</li>
+                        <li>{{ form_widget(form.register, {'attr':{'class':'btn'}}) }} </li>
+                    </ul>
+
+                    {{ form_rest(form) }}
+                    {{ form_end(form) }}
+                </div>
+
+
+            </section>
+        </div>
+        <div>
+            <ul class="form-footer">
+                <div class="social-login">Or sign up with &nbsp;
+                    <a href="" class="fb"><i class="fa fa-facebook"></i></a>
+                    <a href="" class="tw"><i class="fa fa-twitter"></i></a>
+                    <a href="" class="gp"><i class="fa fa-google-plus"></i></a>
+                    <a href="" class="in"><i class="fa fa-linkedin"></i></a>
+                </div>
+            </ul>
+        </div>
     </div>
 
+{% endblock content %}
 
-</section>
+

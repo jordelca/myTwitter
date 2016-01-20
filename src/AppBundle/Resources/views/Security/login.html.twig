@@ -17,20 +17,24 @@
 
     <div id="login-form" class="background-cover">
 
-        <input type="radio" checked id="login" name="switch" class="hide">
-        <input type="radio" id="signup" name="switch" class="hide">
 
         <div>
             <ul class="form-header">
-                <li><label for="login"><i class="fa fa-lock"></i> LOGIN<label for="login"></li>
-                <li><label for="signup"><i class="fa fa-credit-card"></i> REGISTER</label></li>
+                <li class="checked"><label for="login"><i class="fa fa-lock"></i> LOGIN</label></li>
+                <a href="{{ path('fos_user_registration_register') }}"><li><label for="signup"><i class="fa fa-credit-card"></i> REGISTER</label></li></a>
             </ul>
         </div>
 
         <div class="section-out">
             <section class="login-section">
                 <div class="login">
-
+                    {% if error %}
+                        <div class="panel panel-danger">
+                            <div class="panel-body">
+                                <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                            </div>
+                        </div>
+                    {% endif %}
                     <form action="{{ path("fos_user_security_check") }}" method="post">
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
                         <ul class="ul-list">
@@ -45,8 +49,6 @@
 
 
             </section>
-
-            {{ render(controller('FOSUserBundle:Registration:register')) }}
 
         </div>
         <div>
