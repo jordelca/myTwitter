@@ -19,5 +19,7 @@
             $request = $event->getRequest();
             $baseurl = $request->getScheme() . '://' . $request->getHttpHost() . $request->getRequestUri();
             $this->logger->info($baseurl);
+
+
         }
     }

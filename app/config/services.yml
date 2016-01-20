@@ -26,6 +26,12 @@ services:
                   - { name: monolog.logger, channel: request_info }
                   - { name: kernel.event_listener, event: kernel.request}
 
+      app.route_listener:
+              class: AppBundle\EventListener\ForbiddenRouteListener
+              arguments: [ @security.context, @router ]
+              tags:
+                  - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+
       app.form.registration:
               class: AppBundle\Form\RegistrationType
               tags:
