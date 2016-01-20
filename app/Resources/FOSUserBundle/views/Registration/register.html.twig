@@ -28,13 +28,16 @@
         <div class="section-out">
             <section class="signup-section">
                 <div class="login">
+                    {% if form_errors(form)|length > 0 %}
+                        <div class="panel panel-danger">
+                            <div class="panel-body">
+                                <div>{{ form_errors(form) }}</div>
+                            </div>
+                        </div>
+                    {% endif %}
 
                     {{ form_start(form, {'action': path('fos_user_registration_register'), 'method': 'POST'}) }}
-                    <div class="panel panel-danger">
-                        <div class="panel-body">
-                            <div>{{ form_errors(form) }}</div>
-                        </div>
-                    </div>
+
 
                     <ul class="ul-list">
                         <li>{{ form_widget(form.username,{'attr':{'class':'input', 'placeholder':'Username'}}) }}<span class="icon"><i class="fa fa-user"></i></span></li>
