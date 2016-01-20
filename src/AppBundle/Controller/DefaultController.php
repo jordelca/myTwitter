@@ -62,4 +62,6 @@ class DefaultController extends BaseController
         // replace this example code with whatever you need
         return $this->render('AppBundle:Timeline:showTimeline.html.twig');
     }
+
+
 }

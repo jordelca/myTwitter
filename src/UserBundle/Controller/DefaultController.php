@@ -6,32 +6,32 @@ use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use UserBundle\Entity\User;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
+/**
+ * User controller.
+ *
+ * @Route("/user")
+ */
 class DefaultController extends Controller
 {
+
     /**
-     * @Route("/signup", name="signup")
+     * Lists my Twit entities.
+     *
+     * @Route("/{username}", name="user_twits")
+     * @Template("AppBundle:Twit:index.html.twig")
      */
-    public function createUserAction()
+    public function userTwitsAction($username)
     {
-        $user = new User();
-        $form = $this->createFormBuilder()
-            ->add('name','text')
-            ->add('surname','text')
-            ->add('save','text')
-            ->getForm();
+        $em = $this->getDoctrine()->getManager();
+        $user =  $em->getRepository('UserBundle:User')->findOneByUsername($username);
+        $entities = $this->get('app.twits')->findTwitsByUser($user);
 
-        $form->handleRequest();
 
-        if($form->isValid()){
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($user);
-            $em->flush();
-
-            return $this->redirect($this->generateUrl('login',array('id' => $user->getId())));
-
-        }
-        return $this->render('UserBundle:Default:createUser.html.twig');
+        return array(
+            'entities' => $entities,
+        );
     }
 
 

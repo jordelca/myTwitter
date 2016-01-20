@@ -35,24 +35,6 @@ class TwitController extends Controller
         );
     }
 
-    /**
-     * Lists my Twit entities.
-     *
-     * @Route("/{username}", name="user_twits")
-     * @Method("GET")
-     * @Template("AppBundle:Twit:index.html.twig")
-     */
-    public function userTwitsAction($username)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $user =  $em->getRepository('UserBundle:User')->findOneByUsername($username);
-        $entities = $this->get('app.twits')->findTwitsByUser($user);
-
-
-        return array(
-            'entities' => $entities,
-        );
-    }
 
     /**
      * Creates a new Twit entity.
