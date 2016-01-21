@@ -47,16 +47,32 @@
                         </ul>
                         <ul class="pull-right nav navbar-nav">
                             {% if app.user %}
-                                <li>
-                                    <a href="{{ path('user_twits', { 'username' : app.user.username }) }}">
-                                        {{ app.user.username }}
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ path('fos_user_security_logout') }}">
-                                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                                    </a>
-                                </li>
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <li>
+                                        {% if app.user.username != 'admin' %}
+                                            <a href="{{ path('settings') }}">
+                                                {{ 'Settings'|trans({}, 'FOSUserBundle') }}
+                                            </a>
+                                        {% else %}
+                                            <a href="{{ path('manager') }}">
+                                                {{ 'Admin'|trans({}, 'FOSUserBundle') }}
+                                            </a>
+                                        {% endif %}
+
+                                    </li>
+                                {% endif %}
+                                {% if app.user.username != 'admin' %}
+                                    <li>
+                                        <a href="{{ path('user_twits', { 'username' : app.user.username }) }}">
+                                            {{ app.user.username }}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('fos_user_security_logout') }}">
+                                            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                                        </a>
+                                    </li>
+                                {% endif %}
                             {% else %}
 
                                 <li>

@@ -37,6 +37,6 @@ class TwitType extends AbstractType
      */
     public function getName()
     {
-        return 'appbundle_twit';
+        return 'twit_form';
     }
 }
