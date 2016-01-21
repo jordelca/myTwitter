@@ -55,14 +55,6 @@ class DefaultController extends BaseController
     }
 
     /**
-     * @Route("/settings", name="settings")
-     */
-    public function settingsAction(Request $request)
-    {
-        return $this->render('AppBundle:Settings:settings.html.twig', array('user' => $this->get('security.context')->getToken()->getUser()));
-    }
-
-    /**
      * @Route("/timeline", name="timeline")
      */
     public function timelineAction(Request $request)
