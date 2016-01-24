@@ -40,7 +40,7 @@
                         <ul class="ul-list">
                             <li><input type="text" id="username" name="_username" value="{{ last_username }}" required="required" class="input" placeholder="{{ 'security.login.username'|trans }}"/><span class="icon"><i class="fa fa-user"></i></span></li>
                             <li><input type="password" id="password" name="_password" required="required" class="input" placeholder="{{ 'security.login.password'|trans }}" /><span class="icon"><i class="fa fa-lock"></i></span></li>
-                            <li><span class="remember"><input type="checkbox" id="remember_me" name="_remember_me" value="on" /> <label for="check1">{{ 'security.login.remember_me'|trans }}</label></span><span class="remember"><a href="">{{ 'forget.password'|trans({}, 'messages') }}</a></span></li>
+                            <li><span class="remember"><input type="checkbox" id="remember_me" name="_remember_me" value="on" /> <label for="check1">{{ 'security.login.remember_me'|trans }}</label></span><span class="forget"><a href="">{{ 'forget.password'|trans({}, 'messages') }}</a></span></li>
                             <li><input type="submit" value="{{ 'security.login.submit'|trans }}" class="btn"></li>
                         </ul>
                     </form>
