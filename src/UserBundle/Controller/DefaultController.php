@@ -10,8 +10,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 /**
  * User controller.
- *
- * @Route("/user")
+ * @Route("/{_locale}/user", defaults={"_locale": "en"}, requirements={
+ *     "_locale": "en|es"
+ * })
  */
 class DefaultController extends Controller
 {

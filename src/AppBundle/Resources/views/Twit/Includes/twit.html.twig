@@ -12,8 +12,8 @@
 
     <p>{{ entity.message }}</p>
     <p>
-        {{ entity.likes }} likes
-        {{ entity.retwits }} retwits
+        {{ entity.likes }} {{ 'likes'|trans({}, 'messages') }}
+        {{ entity.retwits }} {{ 'retwits'|trans({}, 'messages') }}
 
 
     </p>

@@ -3,7 +3,7 @@
 {% block inner_content %}
 
 
-    <h1>Twit creation</h1>
+    <h1>{{ 'twit.creation'|trans({}, 'messages') }}</h1>
 
     <blockquote class="twitter-tweet col-xs-12">
         {{ app.user }} (@{{ app.user }})
@@ -23,6 +23,6 @@
 
 
     <a href="{{ path('twit') }}" class="btn btn-primary">
-        Back to the list
+        {{ 'back.to.list'|trans({}, 'messages') }}
     </a>
 {% endblock %}

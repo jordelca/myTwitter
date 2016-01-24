@@ -10,6 +10,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use FOS\UserBundle\Controller\SecurityController as BaseController;
 use AppBundle\Form\RegistrationType;
 
+/**
+ *
+ * Settings controller.
+ * @Route("/{_locale}", defaults={"_locale": "en"}, requirements={
+ *     "_locale": "en|es"
+ * })
+ */
+
 class DefaultController extends BaseController
 {
     /**
@@ -17,7 +25,6 @@ class DefaultController extends BaseController
      */
     public function landingPageAction(Request $request){
         {
-
             $securityContext = $this->container->get('security.authorization_checker');
             if ($securityContext->isGranted('ROLE_USER')) {
                 return new RedirectResponse($this->generateUrl('twit'));
@@ -53,6 +60,8 @@ class DefaultController extends BaseController
 
         return $this->render('default/index.html.twig');
     }
+
+
 
     /**
      * @Route("/timeline", name="timeline")

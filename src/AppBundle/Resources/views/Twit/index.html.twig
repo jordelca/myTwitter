@@ -1,7 +1,7 @@
 {% extends '::layout.html.twig' %}
 
 {% block inner_content %}
-    <h1>Twit list</h1>
+    <h1>{{ 'twit.list'|trans({}, 'messages') }}</h1>
 
 
     {% for entity in entities %}
@@ -11,7 +11,7 @@
 
 
     <a href="{{ path('twit_new') }}" class="btn btn-primary">
-        Create a new entry
+        {{ 'create.new.entry'|trans({}, 'messages') }}
     </a>
 
 {% endblock %}

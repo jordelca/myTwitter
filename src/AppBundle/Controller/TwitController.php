@@ -13,7 +13,9 @@ use AppBundle\Form\TwitType;
 /**
  * Twit controller.
  *
- * @Route("/twit")
+ * @Route("/{_locale}/twit", defaults={"_locale": "en"}, requirements={
+ *     "_locale": "en|es"
+ * })
  */
 class TwitController extends Controller
 {

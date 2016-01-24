@@ -33,7 +33,7 @@ class ChangeUserRoleType extends AbstractType
             )
             ->add('enabled','choice',
                 array(
-                    'choices' => array('1' => 'Active', '0' => 'Inactive'),
+                    'choices' => array('1' => 'visible.active', '0' => 'visible.inactive'),
                     'expanded' => true
                 )
             )

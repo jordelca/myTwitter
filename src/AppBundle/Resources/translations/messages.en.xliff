@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>welcome.name</source>
+                <target>Welcome %name%</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>admin.manager</source>
+                <target>Admin are</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>user.manager</source>
+                <target>User manager</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>username</source>
+                <target>Username</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>last.login</source>
+                <target>Last login</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>register</source>
+                <target>Register</target>
+            </trans-unit>
+            <trans-unit id="7a">
+                <source>login</source>
+                <target>Login</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>or.sign.with</source>
+                <target>Or sign with</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>settings.area</source>
+                <target>Setting area</target>
+            </trans-unit>
+            <trans-unit id="9b">
+                <source>settings</source>
+                <target>Settings</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>admin.section</source>
+                <target>This section is just for admin users</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>create.new.entry</source>
+                <target>Create new entry</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>retwits</source>
+                <target>retwits</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>likes</source>
+                <target>likes</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>about.us</source>
+                <target>About us</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>services</source>
+                <target>Services</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>contact</source>
+                <target>Contact</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>back.to.list</source>
+                <target>Back to list</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>create.new.entry</source>
+                <target>Create new entry</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>twit.edit</source>
+                <target>Edit twit</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>twit.list</source>
+                <target>Twit list</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>my.twits</source>
+                <target>My twits</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>twit.creation</source>
+                <target>Twit creation</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>twit</source>
+                <target>Twit</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>terms.conditions</source>
+                <target>I accept terms and conditions</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>visible.active</source>
+                <target>Active</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>visible.inactive</source>
+                <target>Inactive</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -12,13 +12,16 @@ use AppBundle\Form\RegistrationType;
 
 /**
  * Settings controller.
- *
- * @Route("/settings")
+ * @Route("/{_locale}/settings", defaults={"_locale": "en"}, requirements={
+ *     "_locale": "en|es"
+ * })
  */
+
 class SettingsController extends BaseController
 {
     /**
      * @Route("/", name="settings")
+     *
      */
     public function settingsAction(Request $request)
     {

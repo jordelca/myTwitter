@@ -30,7 +30,7 @@ class RegistrationType extends AbstractType
                 'error_bubbling' => true
             ))
             ->add('terms','checkbox',
-                        array('property_path' => 'termsAccepted', 'label' => 'I accept terms and conditions')
+                        array('property_path' => 'termsAccepted', 'label' => 'terms.conditions','translation_domain' => 'messages')
             )
             ->add('register', 'submit');
         ;
@@ -50,6 +50,13 @@ class RegistrationType extends AbstractType
     {
         $this->configureOptions($resolver);
     }
+
+    public function getParent()
+    {
+        return 'fos_user_registration';
+    }
+
+
     // BC for SF < 3.0
     public function getName()
     {

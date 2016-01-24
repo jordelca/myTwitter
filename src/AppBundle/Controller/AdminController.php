@@ -10,8 +10,9 @@ use AppBundle\Form\ChangeUserRoleType;
 
 /**
  * Twit controller.
- *
- * @Route("/admin")
+ * @Route("/{_locale}/admin", defaults={"_locale": "en"}, requirements={
+ *     "_locale": "en|es"
+ * })
  */
 class AdminController extends Controller
 {
@@ -45,7 +46,6 @@ class AdminController extends Controller
         $formEditUser = $this->createForm(new ChangeUserRoleType($this->container->getParameter('security.role_hierarchy.roles'), $user));
 
         $formEditUser->get('roles')->setData($user->getRoles());
-        $formEditUser->get('enabled')->setData($user->isEnabled());
 
         $formEditUser->handleRequest($request);
 

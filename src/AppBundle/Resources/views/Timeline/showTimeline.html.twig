@@ -1,6 +1,6 @@
 {% extends "::layout.html.twig" %}
 {% block inner_content %}
-                <a href="{{ path('twit_new') }}" class="btn btn-primary">
-                Create a new entry
-            </a>
+    <a href="{{ path('twit_new') }}" class="btn btn-primary">
+        {{ 'create.new.entry'|trans({}, 'messages') }}
+    </a>
 {% endblock %}

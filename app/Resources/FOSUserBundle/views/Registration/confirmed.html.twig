@@ -3,7 +3,7 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block inner_content %}
-    <h1>User created</h1>
+    <h1>{{ 'user.created'|trans({}, 'AppBundle') }}</h1>
 
     <blockquote class="twitter-tweet col-xs-12">
             <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
@@ -14,7 +14,7 @@
 
 
     <a href="{{ path('twit') }}" class="btn btn-primary">
-        Back to the list
+        {{ 'home'|trans({}, 'AppBundle') }}
     </a>
 
 </ul>

@@ -20,8 +20,8 @@
 
         <div>
             <ul class="form-header">
-                <li class="checked"><label for="login"><i class="fa fa-lock"></i> LOGIN</label></li>
-                <a href="{{ path('fos_user_registration_register') }}"><li><label for="signup"><i class="fa fa-credit-card"></i> REGISTER</label></li></a>
+                <li class="checked"><label for="login"><i class="fa fa-lock"></i> {{ 'login'|trans({}, 'messages') }}</label></li>
+                <a href="{{ path('fos_user_registration_register') }}"><li><label for="signup"><i class="fa fa-credit-card"></i> {{ 'register'|trans({}, 'messages') }}</label></li></a>
             </ul>
         </div>
 
@@ -53,7 +53,7 @@
         </div>
         <div>
             <ul class="form-footer">
-                <div class="social-login">Or sign up with &nbsp;
+                <div class="social-login">{{ 'or.sign.with'|trans({},'messages') }}
                     <a href="" class="fb"><i class="fa fa-facebook"></i></a>
                     <a href="" class="tw"><i class="fa fa-twitter"></i></a>
                     <a href="" class="gp"><i class="fa fa-google-plus"></i></a>
