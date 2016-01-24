@@ -114,6 +114,10 @@
                 <source>visible.inactive</source>
                 <target>Inactivo</target>
             </trans-unit>
+            <trans-unit id="27">
+                <source>forget.password</source>
+                <target>Forgot password?</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
