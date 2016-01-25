@@ -189,4 +189,9 @@ class Twit
     {
         return $this->retwits;
     }
+
+    public function countTwitCharacters()
+    {
+        return strlen($this->getMessage());
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace AppBundle\Model;
 
+use AppBundle\Entity\Twit;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\SecurityContext;
 
@@ -20,4 +21,5 @@ class TwitManager {
     {
         return $this->repository->findBy(array("srcUsrId" => $user ));
     }
+
 }
