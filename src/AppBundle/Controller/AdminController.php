@@ -46,7 +46,7 @@ class AdminController extends Controller
         $formEditUser = $this->createForm(new ChangeUserRoleType($this->container->getParameter('security.role_hierarchy.roles'), $user));
 
         $formEditUser->get('roles')->setData($user->getRoles());
-        $formEditUser->get('enabled')->setData($user->getEnabled());
+        $formEditUser->get('enabled')->setData($user->isEnabled());
 
         $formEditUser->handleRequest($request);
 
