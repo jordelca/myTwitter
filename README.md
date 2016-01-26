@@ -1,72 +1,37 @@
-Symfony Standard Edition
+My Twitter
 ========================
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony2
-application that you can use as the skeleton for your new applications.
+Se ha implementado una aplicación similar a Twitter, para la ejecución de los ejercicios del curso. La aplicación se ha subido a heroku, por lo tanto está visible en cualquier momento en:
+http://mytwitter-jordelca.herokuapp.com/
 
-For details on how to download and get started with Symfony, see the
-[Installation][1] chapter of the Symfony Documentation.
+Características
+---------------
 
-What's inside?
---------------
+La aplicación consta de los siguientes apartados:
+Una página de inicio para usuarios no autenticados:
+* http://mytwitter-jordelca.herokuapp.com/
+Login de acceso para usuarios registrados
+http://mytwitter-jordelca.herokuapp.com/en/login
+Formulario de registro para usuarios nuevos
+* http://mytwitter-jordelca.herokuapp.com/en/register/
+Validación de ambos formularios
+Url amigables como se puede comprobar en ( user: testuser / pass: p@ssword)
+* http://mytwitter-jordelca.herokuapp.com/en/user/testuser
 
-The Symfony Standard Edition is configured with the following defaults:
+Roles de usuarios
+-----------------
+Sistema de gestión de roles, solo accesible por usuarios ROLE_ADMIN ( user: testuser2 / pass: p@ssword)
+* http://mytwitter-jordelca.herokuapp.com/en/admin/
+Internacionalización de la aplicación:
+* http://mytwitter-jordelca.herokuapp.com/en/twit/
+* http://mytwitter-jordelca.herokuapp.com/es/twit/
 
-  * An AppBundle you can use to start coding;
+Se ha utilizado:
+----------------
 
-  * Twig as the only configured template engine;
+* Assetic para la gestión de assets
+* PhpUnit para los tests unitarios y funcionales
 
-  * Doctrine ORM/DBAL;
+Se puede acceder al código en el siguiente repositorio de github:
+* https://github.com/jordelca/myTwitter.git
 
-  * Swiftmailer;
-
-  * Annotations enabled for everything.
-
-It comes pre-configured with the following bundles:
-
-  * **FrameworkBundle** - The core Symfony framework bundle
-
-  * [**SensioFrameworkExtraBundle**][6] - Adds several enhancements, including
-    template and routing annotation capability
-
-  * [**DoctrineBundle**][7] - Adds support for the Doctrine ORM
-
-  * [**TwigBundle**][8] - Adds support for the Twig templating engine
-
-  * [**SecurityBundle**][9] - Adds security by integrating Symfony's security
-    component
-
-  * [**SwiftmailerBundle**][10] - Adds support for Swiftmailer, a library for
-    sending emails
-
-  * [**MonologBundle**][11] - Adds support for Monolog, a logging library
-
-  * [**AsseticBundle**][12] - Adds support for Assetic, an asset processing
-    library
-
-  * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
-    the web debug toolbar
-
-  * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
-    configuring and working with Symfony distributions
-
-  * [**SensioGeneratorBundle**][13] (in dev/test env) - Adds code generation
-    capabilities
-
-  * **DebugBundle** (in dev/test env) - Adds Debug and VarDumper component
-    integration
-
-All libraries and bundles included in the Symfony Standard Edition are
-released under the MIT or BSD license.
-
-Enjoy!
-
-[1]:  https://symfony.com/doc/2.6/book/installation.html
-[6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
-[7]:  https://symfony.com/doc/2.6/book/doctrine.html
-[8]:  https://symfony.com/doc/2.6/book/templating.html
-[9]:  https://symfony.com/doc/2.6/book/security.html
-[10]: https://symfony.com/doc/2.6/cookbook/email.html
-[11]: https://symfony.com/doc/2.6/cookbook/logging/monolog.html
-[12]: https://symfony.com/doc/2.6/cookbook/assetic/asset_management.html
-[13]: https://symfony.com/doc/2.6/bundles/SensioGeneratorBundle/index.html
