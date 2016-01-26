@@ -43,10 +43,11 @@ security:
 
 
     access_control:
-        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/, role: ROLE_ADMIN }
-        - { path: ^/settings/, role: ROLE_ADMIN }
-        - { path: ^/twit/, role: ROLE_USER }
-        - { path: ^/, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/[a-z][a-z]/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/[a-z][a-z]/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/[a-z][a-z]/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/[a-z][a-z]/admin/, role: ROLE_ADMIN }
+        - { path: ^/[a-z][a-z]/settings/, role: ROLE_ADMIN }
+        - { path: ^/[a-z][a-z]/twit/, role: ROLE_USER }
+        - { path: ^/[a-z][a-z]/user/, role: ROLE_USER }
+        - { path: ^/[a-z][a-z]/, role: IS_AUTHENTICATED_ANONYMOUSLY }
